@@ -21,14 +21,14 @@ settings-additions.json # Hooks to add to ~/.claude/settings.json
 
 ### Windows
 ```bat
-git clone https://github.com/[YOUR_USERNAME]/claude-global-config
+git clone https://github.com/ryanctrading-cpu/claude-global-config
 cd claude-global-config
 setup.bat
 ```
 
 ### Mac/Linux
 ```bash
-git clone https://github.com/[YOUR_USERNAME]/claude-global-config
+git clone https://github.com/ryanctrading-cpu/claude-global-config
 cd claude-global-config
 chmod +x setup.sh && ./setup.sh
 ```
@@ -53,6 +53,7 @@ The `bot-*.md` and `state-sync.md` commands reference `[GCP_VM_IP]` as a placeho
       User ryanguy7890
   ```
   Then update the commands to use `gridbot` instead of `ryanguy7890@[GCP_VM_IP]`.
+  (Actual IP is in bot/CLAUDE.md on your local machine — not committed here for security.)
 
 ## Keeping it updated
 
