@@ -23,10 +23,10 @@
 ## Environment
 
 - **Machine**: Windows 10, bash shell via Claude Code
-- **Bot server**: GCP VM (credentials stored locally in bot/CLAUDE.md - never commit to public repos)
+- **Bot server**: GCP VM (credentials in bot/CLAUDE.md - not committed to public repos)
 - **SSH commands** to the GCP VM are pre-authorized and can run freely
 - Use bash-compatible commands; avoid Windows-specific syntax
-- Python3 is available locally
+- Python3 is available locally via `Bash(python3:*)`
 
 ## Code Style
 
@@ -41,7 +41,7 @@
 - Never `--no-verify`, never force push to main
 - Use descriptive commit messages focused on "why"
 
-## Projects
+## Projects on This Machine
 
 - **bot/** - Gemini grid trading bot (live, production, GCP-hosted) - see bot/CLAUDE.md
 - **etsyproject1/** - Etsy Google Sheets templates - see etsyproject1/CLAUDE.md
