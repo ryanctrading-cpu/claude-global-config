@@ -1,0 +1,6 @@
+# Never commit credentials or local state
+*.env
+.env*
+*credentials*
+*secrets*
+*_local.md

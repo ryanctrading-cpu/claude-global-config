@@ -1,0 +1,29 @@
+{
+  "_comment": "Merge these hooks into your ~/.claude/settings.json. Don't overwrite — your settings.json has project-specific permissions. Just add these hook entries.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c \"summary=\\\"$HOME/.claude/projects/C--Users-Ryan-bot/session-memory/summary.md\\\"; if [ -f \\\"$summary\\\" ]; then echo '--- Previous bot session summary ---'; cat \\\"$summary\\\"; echo '--- End summary ---'; fi\"",
+            "statusMessage": "Loading previous session context..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "agent",
+            "prompt": "A Claude Code session turn just ended. Your job is to capture any meaningful work so nothing is lost if the computer resets. Check what actually happened this turn before doing anything — only act if there is something worth capturing.\n\n**1. Memory files**\nIf meaningful work was done (files changed, decisions made, features built), update the project memory at ~/.claude/projects/ (find the folder matching the current working directory). Create or update a file like 'session_log.md' with today's date, what was built/changed, key decisions, and current project state. Also update any stale existing memory files (project status, architecture, etc.).\n\n**2. Git commit**\nRun `git status`. If there are uncommitted tracked-file changes worth saving, stage modified files (do NOT git add untracked files blindly) and create a descriptive commit. Skip if nothing meaningful changed or if this is not a git repo.\n\n**3. Changelog**\nIf something significant was built or fixed, append a timestamped entry to CHANGELOG.md in the project root (create it if missing). Format: `## [date] - brief summary`. Skip minor/trivial turns.\n\n**4. CLAUDE.md**\nOnly if new conventions, architectural decisions, or patterns were established that future Claude sessions need to know — add them to the project's CLAUDE.md. Do not add noise.\n\nBe conservative: it is better to skip documenting a trivial turn than to spam commits and changelog entries. The goal is resilience against unexpected resets.",
+            "timeout": 120,
+            "statusMessage": "Saving session documentation...",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}
