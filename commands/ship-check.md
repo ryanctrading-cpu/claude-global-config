@@ -23,7 +23,7 @@ Work through each item and print PASS / FAIL / FIXED for each:
 - [ ] No row left at default 21px if content wraps
 
 **Theme / Dark Mode**
-- [ ] Full grid filled (1000 rows x 300 cols) in applyTheme() — not just data rows
+- [ ] Full grid filled (1000 rows × 300 cols) in applyTheme() — not just data rows
 - [ ] Every new section added to applyTheme() immediately when created
 - [ ] Dark Mode tested — no dark text on dark background
 - [ ] Input/dropdown cells have explicit light background + dark text in dark mode
